@@ -1,0 +1,16 @@
+SMAP
+reg_005fbidder_jsp.java
+JSP
+*S JSP
+*F
++ 0 reg_bidder.jsp
+reg_bidder.jsp
+*L
+1,38:48
+40,9:88
+48:97
+49:98,3
+50,2:101
+51:102,2
+52,11:104
+*E
