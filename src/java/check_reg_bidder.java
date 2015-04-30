@@ -54,6 +54,7 @@ public class check_reg_bidder extends HttpServlet {
             String mail=(String)sess.getAttribute("em");
             String un=(String)sess.getAttribute("usr");
             String pwd=(String)sess.getAttribute("pass");
+            String add=(String) sess.getAttribute("add");
             String phn=(String)sess.getAttribute("no");          
             String cit=(String)sess.getAttribute("city");            
             String ut=(String)sess.getAttribute("type");               
@@ -74,7 +75,7 @@ public class check_reg_bidder extends HttpServlet {
 		FileItemFactory factory = new DiskFileItemFactory();
 	 	ServletFileUpload upload = new ServletFileUpload(factory);
                 List  items = upload.parseRequest(request);
-                String paraname[]=new String[10];
+                String paraname[]=new String[15];
 		int i=0;
 		Iterator iterator = items.iterator();
 
@@ -89,7 +90,8 @@ public class check_reg_bidder extends HttpServlet {
                     if (!item.isFormField())// if type=file
                     {
 			     String fileName = item.getName();// uploadiing file
-			     String root = "C:\\Users\\Naitik\\Documents\\NetBeansProjects\\Main Project\\web";//currnet path
+			     out.println(fileName);
+                             String root = "D:\\rushiraj\\Main Project\\web";//currnet path
                              File path = new File(root + "/cmpfile");// path plus testimage directory
                              if (!path.exists())
 			     {
@@ -98,9 +100,10 @@ public class check_reg_bidder extends HttpServlet {
                              File uploadedFile = new File(path + "/" + fileName); /// upload file/image  at path
                             
                              item.write(uploadedFile);//phiscaly write-
-                             String q1="insert into company_details (name,pan_no,it_cer,est_date,lic_val,reg_no,address,class) values('"+paraname[0]+"','"+paraname[1]+"','"+fileName+"','"+paraname[2]+"','"+paraname[3]+"','"+paraname[4]+"','"+paraname[5]+"','"+paraname[6]+"')";
-                             String query="insert into register (first_name,last_name,mail,username,password,phone,city,type,designation,department) values('"+f+"','"+l+"','"+mail+"','"+un+"','"+pwd+"','"+phn+"','"+cit+"','"+ut+"','"+des+"','"+dept+"');";
-                            // out.println(q1);
+                             String q1="insert into company_details (name,pan_no,it_cer,est_date,lic_val,reg_no,address,city,state,class) values('"+paraname[0]+"','"+paraname[1]+"','"+fileName+"','"+paraname[2]+"','"+paraname[3]+"','"+paraname[4]+"','"+paraname[5]+paraname[6]+paraname[7]+"','"+paraname[8]+"','"+paraname[9]+"','"+paraname[10]+"')";
+                             String query="insert into register (first_name,last_name,mail,username,password,phone,address,city,type,designation,department) values('"+f+"','"+l+"','"+mail+"','"+un+"','"+pwd+"','"+phn+"','"+add+"','"+cit+"','"+ut+"','"+des+"','"+dept+"');";
+                             out.println(q1);
+                             out.println(query);
                             int r=st.executeUpdate(q1);//insert remaing data into table.....
                             int p=st.executeUpdate(query);
                       

@@ -52,7 +52,13 @@
 					
 					<label>ADDRESS Line-3</label>
 					<input type="text" name="add3" placeholder="Address line 3" required="required"/>
+                                        
+                                        <label>CITY</label>
+					<input type="text" name="add3" placeholder="Enter City" required="required"/>
 					
+                                        <label>STATE</label>
+					<input type="text" name="add3" placeholder="Enter State" required="required"/>
+                                        
 					<label>CLASS</label>
 					<select name="class">
 						<option>AA</option>

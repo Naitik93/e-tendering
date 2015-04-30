@@ -41,14 +41,14 @@ public class multiple_file extends HttpServlet {
             Statement st=con.createStatement();
             
             boolean isMultipart = ServletFileUpload.isMultipartContent(request);//retrive req.. data & extract below
-            out.println(isMultipart);
+            //out.println(isMultipart);
             if (isMultipart)
             {
                 
 		FileItemFactory factory = new DiskFileItemFactory();
 	 	ServletFileUpload upload = new ServletFileUpload(factory);
                 List  items = upload.parseRequest(request);
-                String paraname[]=new String[10];
+                String paraname[]=new String[20];
 		int i=0,k=0;
 		Iterator iterator = items.iterator();
 
@@ -64,8 +64,8 @@ public class multiple_file extends HttpServlet {
                     {
                              String fileName[]=new String[5];
 			     fileName[k] = item.getName();// uploadiing file
-                             //out.println(fileName[k]);                             
-			     String root = "C:\\Users\\Naitik\\Documents\\NetBeansProjects\\Main Project\\web";//currnet path
+                             out.println(fileName[k]);                             
+			     String root = "D:\\rushiraj\\Main Project\\web";//currnet path
                              File path = new File(root + "/tender file");// path plus testimage directory
                              if (!path.exists())
 			     {
@@ -75,13 +75,13 @@ public class multiple_file extends HttpServlet {
                              k++;
                              item.write(uploadedFile);//phiscaly write-
                              String q1="insert into tender_bid (name,department,net_amount,tfee_paid,fee_receipt,solvency,emd,tender_details,vat_certi) values('"+paraname[0]+"','"+paraname[1]+"','"+paraname[2]+"','"+paraname[3]+"','"+fileName[0]+"','"+fileName[1]+"','"+fileName[2]+"','"+fileName[3]+"','"+fileName[4]+"')";
-//                             out.println(q1);
-                            int r=st.executeUpdate(q1);//insert remaing data into table.....
+                             out.println(q1);
+//                            int r=st.executeUpdate(q1);//insert remaing data into table.....
 //                             con.commit();
-                            if(r>0)
-                            {
-                                response.sendRedirect("welcome_bidder.jsp");
-			}
+//                            if(r>0)
+//                            {
+//                                response.sendRedirect("welcome_bidder.jsp");
+//			}
 		 }
             }
 	}

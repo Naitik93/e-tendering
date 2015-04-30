@@ -89,7 +89,7 @@
 					
 					
 					<li>
-					<a href="contact.jsp">Contact</a>
+					<a href="contact2.jsp">Contact</a>
 					</li>
 					
 					<li>

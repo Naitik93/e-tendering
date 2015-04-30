@@ -66,7 +66,7 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> TABLES <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="#">COMPANY DETAILS</a>
+                                <a href="company_details.jsp">COMPANY DETAILS</a>
                             </li>
                             <li>
                                 <a href="department.jsp">DEPARTMENT</a>
@@ -83,6 +83,8 @@
                     
                       
                                     </ul>
-            </div>
+           
+  </div>
             <!-- /.navbar-collapse -->
         </nav>
+    </div>

@@ -41,35 +41,9 @@ public class check_reg1 extends HttpServlet {
             String dept=request.getParameter("dep");
            
             HttpSession sess=request.getSession(true);
-            String f=(String)sess.getAttribute("fn");
-            String l=(String)sess.getAttribute("ln");
-            String mail=(String)sess.getAttribute("em");
-            String un=(String)sess.getAttribute("usr");
-            String address=(String)sess.getAttribute("add");
-            String pwd=(String)sess.getAttribute("pass");
-            String phn=(String)sess.getAttribute("no");          
-            String cit=(String)sess.getAttribute("city");            
-            String ut=(String)sess.getAttribute("type");               
-            
-            
-            try
-            {
-                    
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","root");
-                Statement st=con.createStatement();
-            
-            String query="insert into register (first_name,last_name,mail,username,password,phone,address,city,type,designation,department) values('"+f+"','"+l+"','"+mail+"','"+un+"','"+pwd+"','"+phn+"','"+address+"','"+cit+"','"+ut+"','"+des+"','"+dept+"');";
-              
-            st.executeUpdate(query);
-            RequestDispatcher rd=request.getRequestDispatcher("reg_bidder1.jsp");
-            rd.forward(request, response);
-            }
-            catch(Exception ex)
-            {
-                out.println(ex);
-            }
-//            response.sendRedirect("reg_bidder1.jsp");
+            sess.setAttribute("des", des);
+            sess.setAttribute("depa", dept);
+            response.sendRedirect("reg_bidder1.jsp");
             
     }
 

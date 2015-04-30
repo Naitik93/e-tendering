@@ -23,6 +23,18 @@
 					<label>DEPARTMENT</label>
 					<input type="text" name="dept" id="panno" placeholder="Enter Department" required="required"/> 
                                         
+                                        <label>NAME OF CONTRACTOR</label>
+					<input type="text" name="dept" id="panno" placeholder="Enter Name Of Contractor" required="required"/> 
+                                        
+                                        <label>NAME OF WORK</label>
+					<input type="text" name="dept" id="panno" placeholder="Enter Name of Work" required="required"/> 
+                                        
+                                        <label>DATE OF STARTING WORK</label>
+					<input type="date" name="dept" id="panno" placeholder="Enter Starting Date" required="required"/> 
+                                        
+                                        <label>DATE OF COMPLETION</label>
+					<input type="date" name="dept" id="panno" placeholder="Enter Completion Date" required="required"/> 
+                                                                                                                        
                                         <label>NET AMOUNT OF TENDER</label>
 					<input type="text" name="amount"  placeholder="Enter Tender Name" required="required"/> 
 					
@@ -31,6 +43,12 @@
                                             <option>Demand Draft (DD)</option>
                                             <option>Cheque</option>                                            
                                         </select>
+                                        
+                                        <label>DATE OF DD</label>
+					<input type="date" name="dept" id="panno" placeholder="Enter Date of DD" required="required"/> 
+                                        
+                                        <label>BANK DETAILS</label>
+					<input type="text" name="dept" id="panno" placeholder="Enter Bank Details" required="required"/> 
                                         
                                         <label>TENDER FEE</label>
 					<input type="file" name="tfee" id="itfile" required="required"/> 
