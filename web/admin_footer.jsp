@@ -1,4 +1,8 @@
->
+</div>
+</div>
+            <!-- /.navbar-collapse -->
+        </nav>
+    </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
