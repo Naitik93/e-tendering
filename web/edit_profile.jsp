@@ -45,29 +45,22 @@
                     <input type="email" name="email" id="email" value=<%= rs.getString(4)%>/>
 				
 					 <label for="username">USERNAME</label>
-                    <input type="text" name="username" id="username" value=<%= rs.getString(5)%> />
-                    
-                              
-<!--                    <label for="password">PASSWORD</label>
-                    <button onclick="myFunction()">Pattern</button><script>function myFunction() {alert("Password must contain: \nUpperCase,LowerCase,\nNumber or SpecialChar and min 8 Chars");}</script>
-                    <input type="password" name="password" id="password" value= required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/> -->
+                    <input type="text" name="username" id="username" value=<%= rs.getString(5)%> />                                                 
                                 
                     <label for="phone">PHONE</label>
                     <input type="number" name="phone" id="phone" value=<%= rs.getString(7)%>  />
-					
-		
-					
+												
                     <label for="city">CITY</label>
-                    <input type="text" name="city" id="city" value=<%= rs.getString(8)%>/>
+                    <input type="text" name="city" id="city" value=<%= rs.getString(9)%>/>
 					
                     <label for="state">USER-TYPE</label>
-                    <input type="text" name="type" id="city" value=<%= rs.getString(9)%>/>
+                    <input type="text" name="type" id="city" value=<%= rs.getString(10)%>/>
                   
                     <label>DESIGNATION</label>
-                    <input type="text" name="designation" id="city" value=<%= rs.getString(10)%>/>
+                    <input type="text" name="designation" id="city" value=<%= rs.getString(11)%>/>
                     
                     <label>DEPARTMENT</label>
-                    <input type="text" name="department" value=<%= rs.getString(11)%>/> <%}%>
+                    <input type="text" name="department" value=<%= rs.getString(12)%>/> <%}%>
                                         
                                         <input class="submit" type="submit" value=""/>
                   </div> 

@@ -79,12 +79,10 @@
                                 <a href="tender.jsp">TENDER</a>
                             </li>
                         </ul>
-                    </li>
-                    
-                      
-                                    </ul>
+                    </li>                      
+                </ul>
            
   </div>
             <!-- /.navbar-collapse -->
         </nav>
-    </div>
+    

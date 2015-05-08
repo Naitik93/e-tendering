@@ -44,7 +44,7 @@ public class multiple_file extends HttpServlet {
             //out.println(isMultipart);
             if (isMultipart)
             {
-                
+                String fileName[]=new String[5];
 		FileItemFactory factory = new DiskFileItemFactory();
 	 	ServletFileUpload upload = new ServletFileUpload(factory);
                 List  items = upload.parseRequest(request);
@@ -62,9 +62,9 @@ public class multiple_file extends HttpServlet {
                     i++;
                     if (!item.isFormField())// if type=file
                     {
-                             String fileName[]=new String[5];
+                             
 			     fileName[k] = item.getName();// uploadiing file
-                             out.println(fileName[k]);                             
+//                             out.println(fileName[k]);                             
 			     String root = "D:\\rushiraj\\Main Project\\web";//currnet path
                              File path = new File(root + "/tender file");// path plus testimage directory
                              if (!path.exists())
@@ -74,16 +74,19 @@ public class multiple_file extends HttpServlet {
                              File uploadedFile = new File(path + "/" + fileName[k]); /// upload file/image  at path
                              k++;
                              item.write(uploadedFile);//phiscaly write-
-                             String q1="insert into tender_bid (name,department,net_amount,tfee_paid,fee_receipt,solvency,emd,tender_details,vat_certi) values('"+paraname[0]+"','"+paraname[1]+"','"+paraname[2]+"','"+paraname[3]+"','"+fileName[0]+"','"+fileName[1]+"','"+fileName[2]+"','"+fileName[3]+"','"+fileName[4]+"')";
-                             out.println(q1);
-//                            int r=st.executeUpdate(q1);//insert remaing data into table.....
-//                             con.commit();
-//                            if(r>0)
-//                            {
-//                                response.sendRedirect("welcome_bidder.jsp");
-//			}
+                             
+//                            
 		 }
             }
+                String q1 = null;
+                
+                    q1="insert into tender_bid (tender_name,department,contractor_name,work_name,starting_date,completion_date,net_amount,fee_type,dd_date,bank_details,tfee_paid,solvency,emd_tender,filled_details,vat_certi) values('"+paraname[0]+"','"+paraname[1]+"','"+paraname[2]+"','"+paraname[3]+"','"+paraname[4]+"','"+paraname[5]+"','"+paraname[6]+"','"+paraname[7]+"','"+paraname[8]+"','"+paraname[9]+"','"+fileName[0]+"','"+fileName[1]+"','"+fileName[2]+"','"+fileName[3]+"','"+fileName[4]+"')";
+//                    out.println(q1);
+                    int r=st.executeUpdate(q1);//insert remaing data into table.....
+                            if(r>0)
+                            {
+                                response.sendRedirect("welcome_bidder.jsp");
+			}
 	}
         }
         catch(Exception ex) {

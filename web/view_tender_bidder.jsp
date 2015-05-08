@@ -28,7 +28,7 @@
     <form method="post" action="FileUpdateServlet" enctype="multipart/form-data">
     <div>
     <fieldset>
-		<legend align="center">UPDATE TENDER</legend>
+		<legend align="center">VIEW TENDER</legend>
 				
                 <div class="form">	
                     
